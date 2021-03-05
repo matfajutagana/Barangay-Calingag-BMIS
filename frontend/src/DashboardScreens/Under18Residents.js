@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
 import ProfileTable from '../components/ProfileTable'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -25,15 +23,7 @@ const Under18Residents = ({ history, match }) => {
     }
   }, [dispatch, history, userInfo])
 
-  const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
-      // DELETE PRODUCTS
-    }
-  }
-
-  const createResidentHandler = (resident) => {
-    //   CREATE PRODUCT
-  }
+  
 
   return (
     <div className="content-wrapper">

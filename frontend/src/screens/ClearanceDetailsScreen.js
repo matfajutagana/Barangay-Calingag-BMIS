@@ -1,7 +1,5 @@
-import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Button, Col, Row } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -9,7 +7,7 @@ import FormContainerResident from '../components/FormContainerResident'
 import { listImageDetails, updateImage } from '../actions/imageActions'
 import { IMAGE_UPDATE_RESET } from '../constants/imageConstants'
 
-const ClearanceDetailsScreen = ({ match, history }) => {
+const ClearanceDetailsScreen = ({ history }) => {
   const imageId = '6024d751fdb580252cb09c81'
   const [loginImage, setLoginImage] = useState('')
   const [slideImage1, setSlideImage1] = useState('')
@@ -61,9 +59,8 @@ const ClearanceDetailsScreen = ({ match, history }) => {
   const [SKtreasurerImage, setSKTreasurerImage] = useState('')
   const [clearanceNo, setClearanceNo] = useState('')
   const [communityTaxNo, setCommunityTaxNo] = useState('')
+  const [purpose, setPurpose] = useState('')
   const [kapitanImage, setKapitanImage] = useState('')
-
-  const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -133,6 +130,7 @@ const ClearanceDetailsScreen = ({ match, history }) => {
         setSKTreasurerImage(image.SKtreasurerImage)
         setClearanceNo(image.clearanceNo)
         setCommunityTaxNo(image.communityTaxNo)
+        setPurpose(image.purpose)
       }
     }
   }, [dispatch, history, imageId, image, successUpdate])
@@ -190,6 +188,7 @@ const ClearanceDetailsScreen = ({ match, history }) => {
         clearanceNo,
         kapitanImage: kapitanImage,
         communityTaxNo,
+        purpose,
       })
     )
   }
@@ -226,6 +225,15 @@ const ClearanceDetailsScreen = ({ match, history }) => {
                 placeholder="Community Tax No"
                 value={communityTaxNo}
                 onChange={(e) => setCommunityTaxNo(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="purpose">
+              <Form.Label>Purpose:</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Purpose"
+                value={purpose}
+                onChange={(e) => setPurpose(e.target.value)}
               />
             </Form.Group>
             <Button type="submit" onClick={refreshPage} variant="primary">

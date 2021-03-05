@@ -1,10 +1,8 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 
 const Menu = withRouter((props) => {
-  const dispatch = useDispatch()
-
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
@@ -48,13 +46,13 @@ const Menu = withRouter((props) => {
                 <img
                   src="image/admin.png"
                   className="img-circle elevation-2"
-                  alt="User Image"
+                  alt="admin"
                 />
               </div>
               <div className="info">
-                <a href="#" className="d-block">
+                <Link to="#" className="d-block">
                   Admin
-                </a>
+                </Link>
               </div>
             </div>
             {/* Sidebar Menu */}

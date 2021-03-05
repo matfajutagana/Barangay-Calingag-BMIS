@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import ProfileTable from '../components/ProfileTable'
 import { listResidents } from '../actions/residentActions'
 
 const DashboardScreen = ({ history, match }) => {
   const dispatch = useDispatch()
 
   const residentList = useSelector((state) => state.residentList)
-  const { loading, error, residents } = residentList
+  const { residents } = residentList
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
@@ -32,11 +31,7 @@ const DashboardScreen = ({ history, match }) => {
             </div>
             {/* /.col */}
             <div className="col-sm-6">
-              <ol className="breadcrumb float-sm-right">
-                <li className="breadcrumb-item">
-                  <Link to="/home">Home</Link>
-                </li>
-              </ol>
+              <ol className="breadcrumb float-sm-right"></ol>
             </div>
             {/* /.col */}
           </div>

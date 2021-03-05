@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Carousel } from 'react-bootstrap'
 import { listImages } from '../actions/imageActions'
 
-const OfficialsScreen = ({ location, history }) => {
+const OfficialsScreen = ({ history }) => {
   const dispatch = useDispatch()
 
   const imageList = useSelector((state) => state.imageList)
-  const { loading, error, images } = imageList
+  const { images } = imageList
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
@@ -35,7 +34,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.secretaryImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -49,7 +48,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kapitanImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -63,7 +62,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.treasurerImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -80,7 +79,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad1Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -95,7 +94,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad2Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -110,7 +109,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad3Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -128,7 +127,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad4Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -143,7 +142,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad5Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -158,7 +157,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad6Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -173,7 +172,7 @@ const OfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.kagawad7Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">

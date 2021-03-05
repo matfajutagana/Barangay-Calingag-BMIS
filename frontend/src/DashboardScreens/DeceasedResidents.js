@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import DeceasedTable from '../components/DeceasedTable'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { listResidents } from '../actions/residentActions'
+import { listResidents, deleteResident } from '../actions/residentActions'
 
 const DeceasedResidents = ({ history, match }) => {
   const dispatch = useDispatch()
 
   const residentList = useSelector((state) => state.residentList)
   const { loading, error, residents } = residentList
+
+  const residentDelete = useSelector((state) => state.residentDelete)
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = residentDelete
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
@@ -23,16 +29,12 @@ const DeceasedResidents = ({ history, match }) => {
     } else {
       history.push('/login')
     }
-  }, [dispatch, history, userInfo])
+  }, [dispatch, history, userInfo, successDelete])
 
   const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
-      // DELETE PRODUCTS
+    if (window.confirm('Are you sure you want to delete?')) {
+      dispatch(deleteResident(id))
     }
-  }
-
-  const createResidentHandler = (resident) => {
-    //   CREATE PRODUCT
   }
 
   return (
@@ -54,6 +56,8 @@ const DeceasedResidents = ({ history, match }) => {
         {/* /.container-fluid */}
       </section>
       {/* Main content */}
+      {loadingDelete && <Loader />}
+      {errorDelete && <Message variant="danger">{errorDelete}</Message>}
       {loading ? (
         <Loader />
       ) : error ? (
@@ -78,7 +82,17 @@ const DeceasedResidents = ({ history, match }) => {
                             View
                           </Link>,
                         ],
-                        edit: [],
+                        edit: [
+                          <>
+                            <Button
+                              variant="danger"
+                              className="btn-sm"
+                              onClick={() => deleteHandler(resident._id)}
+                            >
+                              <i className="fas fa-trash"></i>
+                            </Button>
+                          </>,
+                        ],
                       }))
                       .filter((res) => {
                         return res.isDead === true

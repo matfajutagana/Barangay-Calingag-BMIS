@@ -68,9 +68,9 @@ const updateImage = asyncHandler(async (req, res) => {
     SKsecretaryImage,
     SKtreasurer,
     SKtreasurerImage,
-
     clearanceNo,
     communityTaxNo,
+    purpose,
   } = req.body
 
   const image = await Image.findById(req.params.id)
@@ -124,7 +124,7 @@ const updateImage = asyncHandler(async (req, res) => {
     image.SKtreasurerImage = SKtreasurerImage
     image.clearanceNo = clearanceNo
     image.communityTaxNo = communityTaxNo
-
+    image.purpose = purpose
     const updatedImage = await image.save()
     res.json(updatedImage)
   } else {

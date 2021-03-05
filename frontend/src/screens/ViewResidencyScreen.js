@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import {
   PDFDownloadLink,
   Document,
@@ -188,14 +189,13 @@ const ViewResidencyScreen = ({ match }) => {
                           <div className="col-lg-8 order-lg-2">
                             <ul className="nav nav-tabs">
                               <li className="nav-item">
-                                <a
-                                  href
+                                <Link
                                   data-target="#profile"
                                   data-toggle="tab"
                                   className="nav-link active"
                                 >
                                   Profile
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                             <div className="tab-content py-4">
@@ -268,12 +268,12 @@ const ViewResidencyScreen = ({ match }) => {
                               </div>
                               <div className="tab-pane" id="messages">
                                 <div className="alert alert-info alert-dismissable">
-                                  <a
+                                  <Link
                                     className="panel-close close"
                                     data-dismiss="alert"
                                   >
                                     ×
-                                  </a>{' '}
+                                  </Link>{' '}
                                   This is an <strong>.alert</strong>. Use this
                                   to show important messages to the user.
                                 </div>
@@ -334,7 +334,7 @@ const ViewResidencyScreen = ({ match }) => {
                             <img
                               class="img-fluid img-thumbnail mb-2"
                               src={resident.image}
-                              alt="User profile picture"
+                              alt="User profile"
                             />
                           </div>
                         </div>

@@ -22,14 +22,9 @@ const Header = () => {
           {/* Left navbar links */}
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
-                className="nav-link"
-                data-widget="pushmenu"
-                href="#"
-                role="button"
-              >
+              <Link className="nav-link" data-widget="pushmenu" role="button">
                 <i className="fas fa-bars" />
-              </a>
+              </Link>
             </li>
             <li className="nav-item d-none d-sm-inline-block">
               <Link to={'/'} className="nav-link">
@@ -41,16 +36,15 @@ const Header = () => {
           <ul className="navbar-nav ml-auto">
             {/* Messages Dropdown Menu */}
             <li class="nav-item dropdown">
-              <a
+              <Link
                 class="nav-link dropdown-toggle"
                 data-toggle="dropdown"
-                href="#"
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
                 Account
-              </a>
+              </Link>
               <div class="dropdown-menu">
                 <Link
                   class="dropdown-item"
@@ -68,14 +62,9 @@ const Header = () => {
             {/* Notifications Dropdown Menu */}
 
             <li className="nav-item">
-              <a
-                className="nav-link"
-                data-widget="pushmenu"
-                href="#"
-                role="button"
-              >
+              <Link className="nav-link" data-widget="pushmenu" role="button">
                 <i className="fas fa-th-large" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

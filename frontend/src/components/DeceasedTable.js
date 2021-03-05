@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { MDBDataTableV5 } from 'mdbreact'
-import { Link } from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Button } from 'react-bootstrap'
-
-import axios from 'axios'
 
 export default function DeceasedTable({ res }) {
   const resFiltered = res.filter((r) => {

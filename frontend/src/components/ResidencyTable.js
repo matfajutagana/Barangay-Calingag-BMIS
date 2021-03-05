@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { MDBDataTableV5 } from 'mdbreact'
 
 export default function ResidencyTable({ res }) {
   const resFiltered = res.filter((r) => {
-    return r.age !== -1
+    return r.age !== -1 && r.isDead === false
   })
 
   const datatable = {

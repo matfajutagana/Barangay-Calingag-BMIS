@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { listResidentDetails } from '../actions/residentActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { Button } from 'react-bootstrap'
 
 const ViewProfileScreen = ({ match }) => {
   const dispatch = useDispatch()
@@ -73,14 +72,13 @@ const ViewProfileScreen = ({ match }) => {
                           <div className="col-lg-8 order-lg-2">
                             <ul className="nav nav-tabs">
                               <li className="nav-item">
-                                <a
-                                  href
+                                <Link
                                   data-target="#profile"
                                   data-toggle="tab"
                                   className="nav-link active"
                                 >
                                   Profile
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                             <div className="tab-content py-4">
@@ -137,12 +135,12 @@ const ViewProfileScreen = ({ match }) => {
                               </div>
                               <div className="tab-pane" id="messages">
                                 <div className="alert alert-info alert-dismissable">
-                                  <a
+                                  <Link
                                     className="panel-close close"
                                     data-dismiss="alert"
                                   >
                                     ×
-                                  </a>{' '}
+                                  </Link>{' '}
                                   This is an <strong>.alert</strong>. Use this
                                   to show important messages to the user.
                                 </div>
@@ -203,7 +201,7 @@ const ViewProfileScreen = ({ match }) => {
                             <img
                               class="img-fluid img-thumbnail mb-2"
                               src={resident.image}
-                              alt="User profile picture"
+                              alt="User profile"
                             />
                           </div>
                         </div>

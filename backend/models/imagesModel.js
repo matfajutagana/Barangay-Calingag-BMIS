@@ -194,6 +194,10 @@ const imageSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    purpose: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,

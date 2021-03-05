@@ -1,13 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Container, Row, Col, Button } from 'react-bootstrap'
 import Header from './components/Header'
 import Menu from './components/Menu'
-import Footer from './components/Footer'
+//import Footer from './components/Footer'
 import ProfileScreen from './screens/ProfileScreen'
 import BlotterScreen from './screens/BlotterScreen'
 import ViewProfileScreen from './screens/ViewProfileScreen'
-import EditProfileScreen from './screens/EditProfileScreen'
 import HomeScreen from './screens/HomeScreen'
 import OfficialsScreen from './screens/OfficialsScreen'
 import SKOfficialsScreen from './screens/SKOfficialsScreen'
@@ -48,7 +46,6 @@ function App() {
           <Route path="/" component={LoginScreen} exact />
           <Route path="/profiling" component={ProfileScreen} exact />
           <Route path="/profile/:id" component={ViewProfileScreen} />
-          <Route path="/editprofile/:id" component={EditProfileScreen} />
           <Route path="/home" component={HomeScreen} exact />
           <Route path="/SK" component={SKOfficialsScreen} exact />
           <Route path="/officials" component={OfficialsScreen} exact />
@@ -100,7 +97,9 @@ function App() {
             exact
           />
         </main>
-        <Footer />
+        {
+          //<Footer />
+        }
       </Router>
     </div>
   )

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Form, Button, Col, Row } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -62,6 +62,7 @@ const ImageEditScreen = ({ match, history }) => {
 
   const [clearanceNo, setClearanceNo] = useState('')
   const [communityTaxNo, setCommunityTaxNo] = useState('')
+  const [purpose, setPurpose] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
@@ -132,6 +133,7 @@ const ImageEditScreen = ({ match, history }) => {
         setSKTreasurerImage(image.SKtreasurerImage)
         setClearanceNo(image.clearanceNo)
         setCommunityTaxNo(image.communityTaxNo)
+        setPurpose(image.purpose)
       }
     }
   }, [dispatch, history, imageId, image, successUpdate])
@@ -761,6 +763,7 @@ const ImageEditScreen = ({ match, history }) => {
         SKtreasurerImage,
         clearanceNo: clearanceNo,
         communityTaxNo: communityTaxNo,
+        purpose: purpose,
       })
     )
   }

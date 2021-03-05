@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
 import ResidencyTable from '../components/ResidencyTable'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import {
-  listResidents,
-  createResident,
-  deleteResident,
-} from '../actions/residentActions'
+import { listResidents } from '../actions/residentActions'
 import { RESIDENT_CREATE_RESET } from '../constants/residentConstants'
+import { Alert } from 'react-bootstrap'
 
-const ResidentScreen = ({ history, match }) => {
+const ResidentScreen = ({ history }) => {
   const dispatch = useDispatch()
 
   const residentList = useSelector((state) => state.residentList)
@@ -57,17 +52,6 @@ const ResidentScreen = ({ history, match }) => {
     successCreate,
     createdResident,
   ])
-
-  const deleteHandler = (id) => {
-    if (window.confirm('Are you sure you want to delete?')) {
-      dispatch(deleteResident(id))
-    }
-  }
-
-  const createResidentHandler = () => {
-    dispatch(createResident())
-  }
-
   return (
     <div className="content-wrapper">
       {/* Content Header (Page header) */}
@@ -77,6 +61,9 @@ const ResidentScreen = ({ history, match }) => {
           <div className="row mb-2">
             <div className="col-sm-6">
               <h1>Residency Certificate</h1>
+              <p className="text-danger">
+                (Kindly refresh the page before generating certificate)
+              </p>
             </div>
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right"></ol>

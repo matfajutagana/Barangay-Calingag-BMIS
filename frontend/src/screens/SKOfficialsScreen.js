@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Carousel } from 'react-bootstrap'
 import { listImages } from '../actions/imageActions'
 
 const SKOfficialsScreen = ({ location, history }) => {
   const dispatch = useDispatch()
 
   const imageList = useSelector((state) => state.imageList)
-  const { loading, error, images } = imageList
+  const { images } = imageList
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
@@ -35,7 +34,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKsecretaryImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -49,7 +48,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkapitanImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -65,7 +64,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKtreasurerImage}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -82,7 +81,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad1Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -97,7 +96,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad2Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -114,7 +113,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad3Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -132,7 +131,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad4Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -149,7 +148,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad5Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -166,7 +165,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad6Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">
@@ -184,7 +183,7 @@ const SKOfficialsScreen = ({ location, history }) => {
                 <img
                   className="card-img-top mx-auto"
                   src={image.SKkagawad7Image}
-                  alt="Card image"
+                  alt="Card"
                   style={{ width: '50%' }}
                 />
                 <div className="card-body mx-auto bg-danger">

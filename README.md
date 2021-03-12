@@ -1,5 +1,5 @@
 # Barangay-Calingag-BMIS
-Management Information System for Barangay Calingag
+Management Information System for Barangay Calingag using the MERN Stack
 
 ## Features 
 - Resident Profiling

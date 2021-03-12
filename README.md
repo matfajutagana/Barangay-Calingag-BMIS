@@ -18,7 +18,7 @@ PORT = 5000
 MONGO_URI = your mongodb uri
 JWT_SECRET = abc123
 ```
-**Install Dependencies (frontend & backend)**
+**Install Dependencies (frontend & root)**
 
 ```
 npm install

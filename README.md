@@ -9,15 +9,8 @@ Management Information System for Barangay Calingag using the MERN Stack
 - Customizable HomePage
 
 ## Usage
-**ENV Variables**
 
-Create a .env file in then root and add the following
-```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = abc123
-```
+
 **Install Dependencies (frontend & root)**
 
 ```

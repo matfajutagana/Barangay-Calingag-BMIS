@@ -22,8 +22,9 @@ npm install
 **RUN**
 
 
-![alt text](https://github.com/matfajutagana/Barangay-Calingag-BMIS/blob/main/npm%20i%20frontend.PNG)
 ![alt text](https://github.com/matfajutagana/Barangay-Calingag-BMIS/blob/main/npm%20i.PNG)
+![alt text](https://github.com/matfajutagana/Barangay-Calingag-BMIS/blob/main/npm%20i%20frontend.PNG)
+
 ```
 # Run frontend (:3000) & backend (:5000)
 npm run dev

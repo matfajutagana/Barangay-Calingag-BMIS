@@ -101,8 +101,7 @@ const ResidentEditScreen = ({ match, history }) => {
   }
 
   const displayEmpty = (editDisplay) => {
-    editDisplay === 'sample' ? (editDisplay = '') : (editDisplay = editDisplay)
-    return editDisplay
+    return editDisplay === 'sample' ? '' : editDisplay
   }
 
   const submitHandler = (e) => {
@@ -223,7 +222,7 @@ const ResidentEditScreen = ({ match, history }) => {
                 <Form.Control
                   type="text"
                   placeholder="age"
-                  value={calcAge(birthDay)}
+                  value={calcAge(age)}
                   onChange={(e) => setAge(e.target.value)}
                 />
               </Form.Group>

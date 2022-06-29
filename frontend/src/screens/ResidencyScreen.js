@@ -1,57 +1,45 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import ResidencyTable from '../components/ResidencyTable'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import { listResidents } from '../actions/residentActions'
-import { RESIDENT_CREATE_RESET } from '../constants/residentConstants'
-import { Alert } from 'react-bootstrap'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import ResidencyTable from '../components/ResidencyTable';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+import { listResidents } from '../actions/residentActions';
+import { RESIDENT_CREATE_RESET } from '../constants/residentConstants';
 
 const ResidentScreen = ({ history }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const residentList = useSelector((state) => state.residentList)
-  const { loading, error, residents } = residentList
+  const residentList = useSelector((state) => state.residentList);
+  const { loading, error, residents } = residentList;
 
-  const residentDelete = useSelector((state) => state.residentDelete)
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-    success: successDelete,
-  } = residentDelete
+  const residentDelete = useSelector((state) => state.residentDelete);
+  const { loading: loadingDelete, error: errorDelete, success: successDelete } = residentDelete;
 
-  const residentCreate = useSelector((state) => state.residentCreate)
+  const residentCreate = useSelector((state) => state.residentCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
     resident: createdResident,
-  } = residentCreate
+  } = residentCreate;
 
-  const userLogin = useSelector((state) => state.userLogin)
-  const { userInfo } = userLogin
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
-    dispatch({ type: RESIDENT_CREATE_RESET })
+    dispatch({ type: RESIDENT_CREATE_RESET });
 
     if (!userInfo.isAdmin) {
-      history.push('/login')
+      history.push('/login');
     }
 
     if (successCreate) {
-      history.push(`/admin/resident/${createdResident._id}/edit`)
+      history.push(`/admin/resident/${createdResident._id}/edit`);
     } else {
-      dispatch(listResidents())
+      dispatch(listResidents());
     }
-  }, [
-    dispatch,
-    history,
-    userInfo,
-    successDelete,
-    successCreate,
-    createdResident,
-  ])
+  }, [dispatch, history, userInfo, successDelete, successCreate, createdResident]);
   return (
     <div className="content-wrapper">
       {/* Content Header (Page header) */}
@@ -61,9 +49,7 @@ const ResidentScreen = ({ history }) => {
           <div className="row mb-2">
             <div className="col-sm-6">
               <h1>Residency Certificate</h1>
-              <p className="text-danger">
-                (Kindly refresh the page before generating certificate)
-              </p>
+              <p className="text-danger">(Kindly refresh the page before generating certificate)</p>
             </div>
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right"></ol>
@@ -93,10 +79,7 @@ const ResidentScreen = ({ history }) => {
                     res={residents.map((resident, i) => ({
                       ...resident,
                       Create: [
-                        <Link
-                          to={`/residency/${resident._id}`}
-                          className="btn btn-success btn-sm"
-                        >
+                        <Link to={`/residency/${resident._id}`} className="btn btn-success btn-sm">
                           Create
                         </Link>,
                       ],
@@ -114,7 +97,7 @@ const ResidentScreen = ({ history }) => {
         </section>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ResidentScreen
+export default ResidentScreen;

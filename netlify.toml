@@ -1,5 +1,5 @@
 [build]  
-  publish = "frontend/build/"
+  publish = "build/"
   command = "cd frontend && npm install && npm run build"
 
 # The following redirect is intended for use with most SPAs 
